@@ -1,0 +1,94 @@
+{% extends "BasePage.html" %}
+
+{% block TitleName %}
+會員註冊
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/css/contact.css" />
+{% endblock %}
+
+{% block js %}
+
+<script>
+	function checkPassword(){
+		var p = document.getElementByName('uPassword')[0].value;
+		var p2 = document.getElementByName('repwd')[0].value;
+		if (p == p2){
+			return true;
+		} else{
+			alert('密碼配對有誤，請重新輸入！');
+			return false;
+		}
+	}
+</script>
+
+{% endblock %}
+
+
+{% block Context %}
+
+<div id="contact">
+	
+	<h2>會員註冊</h2>
+
+	<!-- 此處會回傳後台註冊會員的結果狀態 -->
+	<span>{{ msg }}</span>
+
+	<!-- onsubmit 送出時多一層檢查:送出時是否有匹配成功 -->
+	<form class="contact_form" action="" method="post" onsubmit="return checkPassword()">
+		
+		{% csrf_token %}
+
+		<div class="form-group">
+			<label>姓名</label>
+			<input type='text' name="uName" class="form-control" required/>
+		</div>
+
+		<div class="form-group">
+			<label>Email</label>
+			<input type='email' name="uEmail" class="form-control" required/>
+		</div>
+
+		<div class="form-group">
+			<label>密碼</label>
+			<input type='password' name="uPassword" class="form-control" required/>
+		</div>
+
+		<div class="form-group">
+			<label>確認密碼</label>
+			<input type='password' name="repwd" class="form-control" required/>
+		</div>
+
+		<div class="form-group">
+			<label>性別</label>
+			<!-- 單選，預設選項為女生 -->
+			<input type='radio' name="uSex" value="F" checked />女生
+			<input type='radio' name="uSex" value="M" />男生
+		</div>
+
+		<div class="form-group">
+			<label>生日</label>
+			<input type='date' name="uBir" class="form-control" required/>
+			<!-- <input type='date' name="uBir" class="form-control" required/> -->
+		</div>
+
+		<div class="form-group">
+			<label>地址</label>
+			<input type='text' name="uAddr" class="form-control" required/>
+		</div>
+
+		<div class="form-group">
+			<label>行動電話</label>
+			<input type='text' name="uTel" class="form-control" required/>
+		</div>
+
+		<div class="form-group">
+			<button type="submit" class="btn_submit">註冊</button>
+		</div>
+
+	</form>
+
+</div>
+
+{% endblock %}

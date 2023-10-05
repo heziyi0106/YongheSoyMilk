@@ -1,0 +1,96 @@
+{% extends "BasePage.html" %}
+
+{% block TitleName %}
+購物車內容
+{% endblock %}
+
+{% block css %}
+ <link rel='stylesheet' href='/static/css/cart.css' />
+{% endblock %}
+
+{% block js %}
+<!-- 確定是否刪除的 JS功能函式 -->
+<script type="text/javascript">
+	function confirmLink(message){
+		document.returnValue = confirm(message); //confirm的值是true時，就會送出去(刪除)
+	}
+</script>
+{% endblock %}
+
+{% block Context %}
+
+	{% if empty == 1 %} <!--購物車為空-->
+
+	<div style="margin-top: 50px;"></div>
+	<h2>購物車是空的，請至產品頁購物！</h2>
+
+	{% else %}
+
+	<div style="margin-top: 50px;"></div>
+	<div id="cartDiv">
+		<form action="/addtocart/update" method="post" name="form1" id="form1">
+			{% csrf_token %}
+
+			<table width="90%" border="0" align="center" cellpadding="4" cellspacing="0">
+				<tr>
+					<th width="60" align="center">取消</th>
+					<th align="left">商品名稱</th>
+					<th width="80" align="center">單價</th>
+					<th width="80" align="center">數量</th>
+					<th width="100" align="center">金額</th>
+				</tr>
+				<!--
+                    forloop 變量及屬性
+
+                    forloop.counter  由1 開始遞增至總數結束
+                    forloop.counter0  由0 開始遞增至總數結束
+                    forloop.revcounter  由總數開始遞減到1
+                    forloop.revcounter0 由總數開始遞減到0
+
+                    forloop.first 判斷是否是第一次for 迴圈，回傳值為：True 或 False
+                    forloop.last  判斷是否是最後一次 for 迴圈，回傳值為：True 或 False
+                -->
+                {% for unit in goodslist %}
+                <tr>
+                	<td bgcolor="#0f0"><a href="/addtocart/delete/{{forloop.counter0}}" class="delcart" onclick="confirmLink('確定要刪除此商品嗎？'); return document.returnValue">刪除</a></td>
+                	<td align="left">{{ unit.0 }}</td> <!--商品名稱-->
+                	<td width="80" align="center">${{ unit.1 }}</td> <!--商品價格-->
+                	<td width="80" align="center"><input type="text" name="qty{{ forloop.counter0 }}" id="qty{{ forloop.cunter0 }}" value="{{ unit.2 }}" size="2" /></td> <!--商品數量-->
+
+                	<td width="100" align="center"><strong>${{ unit.3 }}</strong></td> <!--該商品總價-->
+                </tr>
+                {% endfor %}
+
+                <tr>
+                	<td colspan="4" align="left" bgcolor="#ffffff" class="upline"><strong>小計</strong></td>
+                	<td align="center" bgcolor="#ffffff" class="upline">$ {{ total }}</td>
+                </tr>
+
+                {% if total < 300 %}
+                <tr>
+                	<td colspan="4" align="left" bgcolor="#ffffff" class="upline"><strong>運費</strong></td>
+                	<td align="center" bgcolor="#ffffff" class="upline">$ 100</td>
+                </tr>
+                {% endif %}
+
+                <tr>
+                	<td colspan="4" align="left" bgcolor="#ffffff" class="upline"><strong>總計</strong></td>
+                	<td align="center" bgcolor="#ffffff" class="upline"><strong><font color="#ff0000">$ {{ grandtotal }}</font></strong></td>
+                </tr>
+
+			</table>
+
+            <table border="0" align="center" cellpadding="10" cellspacing="0">
+                <tr>
+                    <td><input type="button" name="Continue" value="繼續購物" onClick="window.location='/product'" /></td>
+                    <td><input type="submit" name="Submit" value="更新購物車" /></td>
+                    <td><input type="button" name="Empty" value="清空購物車" onClick="window.location='/addtocart/empty/'" /></td>
+                    <td><input type="button" name="Order" onClick="window.location='/cartorder/'" value="我要結帳" /></td>
+                </tr>
+            </table>
+
+		</form>
+	</div>
+	{% endif %}
+
+{% endblock %}

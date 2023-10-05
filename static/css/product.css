@@ -1,0 +1,22 @@
+.GoodsArea{
+	max-width: 100%;
+	margin-top: 60px;
+}
+
+.goodsinfo{
+	width: 21.5%;
+	float: left;
+	height: 450px;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	margin: 1.5%;
+}
+
+.goodsinfo img{
+	width: 100%;
+	border-radius: 15px;
+}
+
+.goodsinfo span{
+	font-size: 18px;
+}

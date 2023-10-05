@@ -1,0 +1,44 @@
+#contact{
+	margin-left: 30%;
+	margin-bottom: 10%;
+
+}
+
+.contact_form{
+
+	border: 1px solid #ccc;
+	border-radius: 4px; /*圓角*/
+	padding: 0.5em 0.6em; /*內距*/
+	line-height: 1.15; /*線的高度*/
+	width: 450px;
+	margin-bottom: 100px; /*與底部的距離*/
+	font-size: 100%;
+
+}
+
+.form-control{
+
+	border: 1px solid #ccc;
+	border-radius: 4px; /*圓角*/
+	padding: 0.5em 0.6em; /*內距*/
+	line-height: 1.15; /*線的高度*/
+	width: 400px;
+	margin-bottom: 10px; /*與底部的距離*/
+	font-size: 100%;
+
+}
+
+.form-group{
+
+	margin: 2%;
+
+}
+
+.btn_submit{
+
+	background-color: #0000ff;
+	color: #ffffff;
+	padding: 0.5em 1em;
+	border: transparent; /*邊框線整個透明*/
+
+}

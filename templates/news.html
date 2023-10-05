@@ -1,0 +1,35 @@
+{% extends "BasePage.html" %}
+
+
+<!-- 標題 -->
+{% block TitleName %}
+最新消息
+{% endblock %}
+
+
+<!-- CSS -->
+{% block css%}
+<link rel="stylesheet" type="text/css" href="../static/css/news.css">
+{% endblock %}
+
+
+<!-- 內容 -->
+{% block Context%}
+	
+	<!-- 顯示news的資料，從news函式中傳遞的，用物件屬性方式取值 -->
+	{% for news in news_list %}
+
+	<div class="newInfo">
+		<div class="newImg">
+			<img src="{{news.photo_url}}" />
+		</div>
+		<div class="newContent">
+			<span>{{news.title}}</span>
+			<p>{{news.content}}</p>
+		</div>
+	</div>
+
+	{% endfor %}
+
+
+{% endblock%}

@@ -1,0 +1,116 @@
+{% extends "BasePage.html" %}
+
+{% block TitleName %}
+購物車內容
+{% endblock %}
+
+{% block css %}
+ <link rel='stylesheet' href='/static/css/cart.css' />
+{% endblock %}
+
+
+{% block Context %}
+
+<div style="margin-top: 50px;"></div>
+
+<div id="cartDiv">
+
+    <!-- 結帳資訊表單:有三個table(購物資料、買家資料、購物車動作按鈕) -->
+    <form action="/cartok/" method="post" name="form1" id="form1">
+        {% csrf_token %}
+
+        <table width="90%" border="0" align="center" cellpadding="4" cellspacing="0">
+        
+            <tr>
+                <th align="left">商品名稱</th>
+                <th width="80" align="center">單價</th>
+                <th width="80" align="center">數量</th>
+                <th width="100" align="center">金額</th>
+            </tr>
+
+            {% for unit in goodslist %}
+            <!-- 將購物車的資料傳遞出去，可以顯示在購物車內(使用goodslist) -->
+
+                <tr>
+                    <td align="left">{{ unit.0 }}</td>
+                    <td width="80" align="center">{{ unit.1 }}</td>
+                    <td width="80" align="center">{{ unit.2 }}</td>
+                    <td width="100" align="center"><strong>{{ unit.3 }}</strong></td>
+                </tr>
+
+            {% endfor %}
+
+            <tr>
+                <td colspan="4" align="left" bgcolor="#ffffff" class="upline"><strong>小計</strong></td>
+                <td align="center" bgcolor="#ffffff" class="upline">$ {{ total }}</td>
+            </tr>
+
+            {% if total < 300 %}
+            <!-- 金額小於300的情況 -->
+
+                <tr>
+                    <td colspan="4" align="left" bgcolor="#ffffff" class="upline"><strong>運費</strong></td>
+                    <td align="center" bgcolor="#ffffff" class="upline">$ 100 </td>
+                </tr>
+
+            {% endif %}
+
+            <tr>
+                <td colspan="4" align="left" bgcolor="#ffffff" class="upline"><strong>總計</strong></td>
+                <td align="center" bgcolor="#ffffff" class="upline"><strong><font color="#ff0000">$ {{ grandtotal }}</font></strong></td>
+            </tr>
+
+        </table>
+
+        <hr />
+
+        <p class="subject">訂購者資料</p>
+        <table width="90%" border="0" align="center" cellpadding="4" cellspacing="0">
+
+            <tr>
+                <th width="100" align="center">資訊</th>
+                <th>內容</th>
+            </tr>
+            <tr>
+                <td width="100" align="center"><strong>姓名</strong></td>
+                <td><input type="text" name="cuName" value="{{name}}" required /></td>
+            </tr>
+            <tr>
+                <td width="100" align="center"><strong>電話</strong></td>
+                <td><input type="text" name="cuPhone" value="{{phone}}" required /></td>
+            </tr>
+            <tr>
+                <td width="100" align="center"><strong>寄送地址</strong></td>
+                <td><input type="text" name="cuAddr" value="{{address}}" required /></td>
+            </tr>
+            <tr>
+                <td width="100" align="center"><strong>Email</strong></td>
+                <td><input type="text" name="cuEmail" value="{{email}}" required /></td>
+            </tr>
+
+            <tr>
+                <td width="100" align="center"><strong>付款方式</strong></td>
+                <td>
+                    <input type="radio" name="payType" value="現金付款" />現金付款
+                    <input type="radio" name="payType" value="ATM轉帳" />ATM轉帳
+                    <input type="radio" name="payType" value="信用卡" checked />信用卡
+                    <!-- 預設信用卡付款 -->
+                </td>
+            </tr>
+            
+        </table>
+
+        <table border="0" align="center" cellpadding="10" cellspacing="0">
+            
+            <tr>
+                <td><input type="button" value="繼續購物" onclick="window.location='/product'" /></td>
+                <td><input type="button" value="修改購物車" onclick="window.location='/cart'" /></td>
+                <td><input type="submit" value="確認購物" /></td> <!-- 送到/cartok/頁面裡面 -->
+            </tr>
+
+        </table>
+
+    </form>
+</div>
+
+{% endblock %}

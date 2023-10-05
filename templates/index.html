@@ -1,0 +1,43 @@
+{% extends "BasePage.html" %}
+
+
+{% block TitleName %}
+永和豆漿首頁
+{% endblock %}
+
+{% block AdArea %}
+<div id="ad">
+	<img src="https://www.lccnet.com.tw/lccnet/Upload/Article/news-2253.jpg" />
+</div>
+{% endblock %}
+
+
+{% block Context %}
+
+<div id="hot_news">
+	<p>最新消息列表</p>
+
+	{% for row in data %}
+	<div class="hot">
+		<img src="{{row.photo_url}}">
+		<span>{{row.title}}</span>
+	</div>
+	{% endfor %}
+</div>
+
+<div style="clear: both; height: 30px;"></div>
+
+<div id="recommendproduct">
+	<p>美食推薦</p>
+
+	{% for row in product %}
+	<div class="producthot">
+		<img src="{{row.photo_url}}">
+		<span>{{row.name}}</span>
+	</div>
+	{% endfor%}
+</div>
+
+<div style="clear: both; height: 30px;"></div>
+
+{% endblock %}

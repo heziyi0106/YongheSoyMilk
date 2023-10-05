@@ -1,0 +1,41 @@
+{% extends "BasePage.html" %}
+
+{% block TitleName %}
+聯絡我們-問題反應
+{% endblock %}
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/css/contact.css">
+{% endblock %}
+
+
+{% block Context %}
+
+<div id="contact">
+	<h2>會員登入</h2>
+	<span style="color: #ff0000;">{{ msg }}</span>
+
+	<form class="contact_form" action="" method="post">
+		{% csrf_token %}
+
+		<div class="form-group">
+			<label>帳號</label>
+			<input type="email" name="email" class="form-control" placeholder="請輸入Email" required />
+		</div>
+
+		<div class="form-group">
+			<label>密碼</label>
+			<input type="password" name="password" class="form-control" required />
+		</div>
+
+		<div class="form-group">
+			<button type="submit" class="btn_submit">登入</button>
+			<a href="/register/">註冊</a>
+		</div>
+	</form>
+
+
+
+</div>
+{% endblock %}

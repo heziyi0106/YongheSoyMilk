@@ -1,0 +1,46 @@
+{% extends "BasePage.html" %}
+
+{% block TitleName %}
+我的訂單紀錄
+{% endblock %}
+
+{% block css %}
+ <link rel='stylesheet' href='/static/css/cart.css' />
+{% endblock %}
+
+
+{% block Context %}
+
+<div style="margin-top: 50px;"></div>
+
+<div id="cartDiv">
+    <p class="title">我的訂單紀錄</p>
+
+    <table width="90%" border="0" align="center" cellpadding="4" cellspacing="1">
+        <!-- 顯示的內容 -->
+        <tr>
+            <td bgcolor="#cccccc">訂單編號</td>
+            <td bgcolor="#cccccc">訂單日期</td>
+            <td bgcolor="#cccccc">付款金額</td>
+            <td bgcolor="#cccccc">付款方式</td>
+        </tr>
+
+        {% for unit in order %}
+
+        <tr>
+            <td align="center"><a href="/cartordercheck/?orderid={{unit.id}}&customemail={{request.session.memMail}}">{{ unit.id}}</a></td>
+            <td align="center">{{unit.create_date}}</td>
+            <td align="center">{{unit.grandtotal}}</td>
+
+            {% if unit.paytype == 'ATM轉帳' %}
+                <td align="center"><a href="/reportBank/?orderid={{unit.id}}&customemail={{request.session.memMail}}">{{unit.paytype}}</a></td>
+            {% else %}
+                <td align="center">{{unit.paytype}}</td>
+            {% endif %}
+        </tr>
+
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock%}

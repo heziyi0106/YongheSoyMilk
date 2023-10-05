@@ -1,0 +1,54 @@
+{% extends "BasePage.html" %}
+
+{% block TitleName %}
+回報匯款後五碼頁面
+{% endblock %}
+
+{% block css %}
+ <link rel='stylesheet' href='/static/css/cart.css' />
+{% endblock %}
+
+
+{% block Context %}
+    
+<div style="margin-top: 50px;"></div>
+
+<div id="cartDiv">
+
+	<form action="/bankfiveok/" method="post">
+		{% csrf_token %}
+
+		<table border="0" align="center" cellpadding="10" cellspacing="0">
+			<tr>
+				<td>訂單編號</td>
+				<td><input type="text" name="orderid" value="{{bank.0.id}}" readonly /></td>
+			</tr>
+			<tr>
+				<td>訂單金額</td>
+				<td><input type="text" name="amount" value="{{bank.0.grandtotal}}" readonly /></td>
+			</tr>
+			<tr>
+				<td>銀行後五碼</td>
+				<!-- 可察看回報後的後5碼 -->
+				<!-- 用預設None改為空白 -->
+				<td><input type="text" name="bankfive" value="{{bank.0.bankaccount|default_if_none:''}}" required /></td>
+
+				<!-- 沒做值，可排除None -->
+				<!-- 第二種寫法:透過長度來取值 -->
+				<!-- 
+				{% if bank.0.bankaccount|length == 0 %}
+				<td><input type="text" name="bankfive" required /></td>
+				{% else %}
+				<td><input type="text" name="bankfive" value="{{bank.0.bankaccount}}" required /></td>
+				{% endif %}-->
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="送出" /></td>
+			</tr>
+
+		</table>
+
+	</form>
+</div>
+
+{% endblock %}

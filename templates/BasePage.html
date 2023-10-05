@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- <title>永和豆漿--手作的美味</title> -->
+	<title>{% block TitleName %}{% endblock %}</title>
+	<!--
+		通常會在這個區域放入： css 檔、javascript 、google-AD,SEO(FB,Google)
+	-->
+	<!-- <link href="/static/css/reset.css" rel="stylesheet"> -->
+	<link href="/static/css/index.css" rel="stylesheet">
+	<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+
+	
+	<!-- 自定義CSS -->
+	{% block css %}
+	{% endblock %}
+
+	<!-- 自定義JS -->	
+	{% block js %}
+	{% endblock %}
+
+</head>
+<body>
+	<div id="wrapper">
+
+		<!-- 功能列 -->
+		<div id="nav">
+			
+			<div id="logo">
+				<a href='/'>
+					北峰永和豆漿
+					<!-- <img src="/static/images/soy.png"> -->
+				</a>
+				{% comment %} 
+				<a href='/'><span>永和豆漿</span></a> {% endcomment %}
+			</div>
+
+			<div id="menu">
+				<ul>
+					<li><a href="/">關於我們</a></li>
+					<li><a href="/news/">最新消息</a></li>
+					<li><a href="/product/">產品介紹</a></li>
+					<li><a href="#">注意事項</a></li>
+					<li><a href="/contact">聯絡我們</a></li>
+
+<!-- 					<li>
+						<div id="search">
+							<input type="text" name="serachkey" />
+						</div>	
+					</li> -->
+				
+					{% if request.session.yhm == 'good' %}
+
+						<li><a href="/changepassword">會員管理</a></li>
+						<li><a href="/myorder">我的訂單</a></li>
+						<li><a href="/cart">購物車</a></li>
+						<li><a href="/photos">圖片區</a></li>
+						<li><a href="/logout">登出</a></li>
+
+					{% else %}
+						<li><a href="/login">登入</a></li>
+					{% endif %}
+
+				</ul>
+			</div>
+
+
+		</div>
+
+		{% block AdArea %}
+		{% endblock %}
+
+		
+		<div id="content">		
+			
+			{% block Context %}
+			{% endblock %}
+
+		</div>
+		<div id="footer">
+			<span>永和豆漿Django網站</span>
+		</div>
+
+	</div>
+
+</body>
+</html>
