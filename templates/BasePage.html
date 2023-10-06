@@ -9,9 +9,10 @@
 	<!--
 		通常會在這個區域放入： css 檔、javascript 、google-AD,SEO(FB,Google)
 	-->
-	<!-- <link href="/static/css/reset.css" rel="stylesheet"> -->
-	<link href="/static/css/index.css" rel="stylesheet">
-	<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+	<link href="/static/css/reset.css" rel="stylesheet">
+	<link href="/static/css/index2.css" rel="stylesheet">
+	<!-- <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon"> -->
+	<link rel="shortcut icon" href="/static/images/logo2.png" type="image/x-icon">
 
 	
 	<!-- 自定義CSS -->
@@ -24,67 +25,58 @@
 
 </head>
 <body>
-	<div id="wrapper">
 
-		<!-- 功能列 -->
-		<div id="nav">
+	<input type="checkbox" name="" id="menu_control">
+    <div class="header">
+        <h1 class="logo">
+            <a href=""><img src="/static/images/logo1.png"></a>
+        </h1>
+        <!-- 漢堡選單(手機) -->
+        <label for="menu_control" class="menu_btn"> <!-- 透過label在遠端對checkbox操作 -->
+            <span>選單</span> <!-- 放文字用 -->
+        </label>
+        <nav>
+			<a href="/">關於我們</a>
+			<a href="/news/">最新消息</a>
+			<a href="/product/">產品介紹</a>
+			<a href="#">注意事項</a>
+			<a href="/contact">聯絡我們</a>
 			
-			<div id="logo">
-				<a href='/'>
-					北峰永和豆漿
-					<!-- <img src="/static/images/soy.png"> -->
-				</a>
-				{% comment %} 
-				<a href='/'><span>永和豆漿</span></a> {% endcomment %}
-			</div>
+			{% if request.session.yhm == 'good' %}
 
-			<div id="menu">
-				<ul>
-					<li><a href="/">關於我們</a></li>
-					<li><a href="/news/">最新消息</a></li>
-					<li><a href="/product/">產品介紹</a></li>
-					<li><a href="#">注意事項</a></li>
-					<li><a href="/contact">聯絡我們</a></li>
+			
+				<a href="/changepassword">會員管理</a>
+				<a href="/myorder">我的訂單</a>
+				<a href="/cart">購物車</a>
+				<a href="/photos">圖片區</a>
+				<a href="/logout">登出</a>
 
-<!-- 					<li>
-						<div id="search">
-							<input type="text" name="serachkey" />
-						</div>	
-					</li> -->
-				
-					{% if request.session.yhm == 'good' %}
+			{% else %}
 
-						<li><a href="/changepassword">會員管理</a></li>
-						<li><a href="/myorder">我的訂單</a></li>
-						<li><a href="/cart">購物車</a></li>
-						<li><a href="/photos">圖片區</a></li>
-						<li><a href="/logout">登出</a></li>
+				<a href="/login">登入</a>
 
-					{% else %}
-						<li><a href="/login">登入</a></li>
-					{% endif %}
+			{% endif %}
+        </nav>
+    </div>
+	
+	<!-- <div id="wrapper"> -->
 
-				</ul>
-			</div>
+	{% block AdArea %}
+	{% endblock %}
 
-
-		</div>
-
-		{% block AdArea %}
+	
+	<div id="content">		
+		
+		{% block Context %}
 		{% endblock %}
 
-		
-		<div id="content">		
-			
-			{% block Context %}
-			{% endblock %}
-
-		</div>
-		<div id="footer">
-			<span>永和豆漿Django網站</span>
-		</div>
-
 	</div>
+
+	<div class="footer">
+		<span>&copy; copyright 2023 by 北峰永和豆漿</span>
+	</div>
+
+	<!-- </div> -->
 
 </body>
 </html>
