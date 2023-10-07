@@ -19,3 +19,6 @@ def index(request):
     product = Goods.objects.all().order_by('-id')[:4] #產品列表1-4
     data = myNews.objects.all().order_by('-id')[:4] #新聞列表1-4
     return render(request,'index.html',locals())
+
+def notice(request):
+    return render(request,'notice.html')

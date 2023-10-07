@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from news.views import news,index
+from news.views import news,index,notice
 from product.views import product
 from contact.views import contact
 from member.views import register,login,logout,changepassword
@@ -31,6 +31,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('news/',news), #網址,函式
     path('',index),
+    path('notice',notice),
     path('product/',product),
     path('contact/',contact),
     path('register/',register),

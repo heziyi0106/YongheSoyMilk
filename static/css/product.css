@@ -1,9 +1,36 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.wrap{
+    width: 960px;
+    margin: auto;
+}
+
+img{
+	vertical-align: bottom;
+}
+
+.contact{
+	padding-top: 30px;
+}
+
+.form-item{
+	padding: 10px;
+}
+
+.GoodsArea .title{
+	background-color: #ffffff;
+}
+/* 
 .GoodsArea{
 	max-width: 100%;
 	margin-top: 60px;
-}
+} */
 
-.goodsinfo{
+/* .goodsinfo{
 	width: 21.5%;
 	float: left;
 	height: 450px;
@@ -19,4 +46,6 @@
 
 .goodsinfo span{
 	font-size: 18px;
-}
+} */
+
+

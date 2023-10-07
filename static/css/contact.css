@@ -1,7 +1,19 @@
-#contact{
-	margin-left: 30%;
-	margin-bottom: 10%;
+.wrap{
+    width: 960px;
+    margin: auto;
+}
 
+#contact{
+	/* margin-left: 30%;
+	margin-bottom: 10%; */
+	margin-top: 30px;
+	
+}
+
+#contact h2{
+	text-align: center;
+	font-size: 40px;
+	margin-bottom: 30px;
 }
 
 .contact_form{
@@ -11,7 +23,8 @@
 	padding: 0.5em 0.6em; /*內距*/
 	line-height: 1.15; /*線的高度*/
 	width: 450px;
-	margin-bottom: 100px; /*與底部的距離*/
+	margin: auto;
+	margin-bottom: 82px; /*與底部的距離*/
 	font-size: 100%;
 
 }
@@ -25,6 +38,7 @@
 	width: 400px;
 	margin-bottom: 10px; /*與底部的距離*/
 	font-size: 100%;
+	margin-top: 5px;
 
 }
 
@@ -34,11 +48,14 @@
 
 }
 
+
 .btn_submit{
 
 	background-color: #0000ff;
 	color: #ffffff;
 	padding: 0.5em 1em;
 	border: transparent; /*邊框線整個透明*/
-
+	width: 100%;
+	border-radius: 10px;
+	
 }

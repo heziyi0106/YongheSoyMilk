@@ -27,19 +27,21 @@
 <body>
 
 	<input type="checkbox" name="" id="menu_control">
-    <div class="header">
-        <h1 class="logo">
-            <a href=""><img src="/static/images/logo1.png"></a>
-        </h1>
-        <!-- 漢堡選單(手機) -->
-        <label for="menu_control" class="menu_btn"> <!-- 透過label在遠端對checkbox操作 -->
-            <span>選單</span> <!-- 放文字用 -->
-        </label>
-        <nav>
+
+	<div class="header">
+		
+		<h1 class="logo">
+			<a href="/" name="logo"><img src="/static/images/logo1.png"></a>
+		</h1>
+		<!-- 漢堡選單(手機) -->
+		<label for="menu_control" class="menu_btn"> <!-- 透過label在遠端對checkbox操作 -->
+			<span>選單</span> <!-- 放文字用 -->
+		</label>
+		<nav>
 			<a href="/">關於我們</a>
-			<a href="/news/">最新消息</a>
-			<a href="/product/">產品介紹</a>
-			<a href="#">注意事項</a>
+			<a href="/news">最新消息</a>
+			<a href="/product">產品介紹</a>
+			<a href="/notice">注意事項</a>
 			<a href="/contact">聯絡我們</a>
 			
 			{% if request.session.yhm == 'good' %}
@@ -56,24 +58,31 @@
 				<a href="/login">登入</a>
 
 			{% endif %}
-        </nav>
-    </div>
-	
-	<!-- <div id="wrapper"> -->
-
-	{% block AdArea %}
-	{% endblock %}
-
-	
-	<div id="content">		
+		</nav>
 		
-		{% block Context %}
+	</div>
+		
+		<!-- <div id="wrapper"> -->
+	<div class="wrap">
+		{% block AdArea %}
 		{% endblock %}
 
+		
+		<div id="content">		
+			
+			{% block Context %}
+			{% endblock %}
+
+		</div>
 	</div>
 
 	<div class="footer">
 		<span>&copy; copyright 2023 by 北峰永和豆漿</span>
+	</div>
+
+
+	<div class="up-btn">
+		<a href="#logo"><img src="/static/images/arrowhead.png" alt=""></a>
 	</div>
 
 	<!-- </div> -->

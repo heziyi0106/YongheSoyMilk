@@ -3,6 +3,11 @@
     padding: 0;
     list-style: none;
 }
+.wrap{
+    width: 960px;
+    margin: auto;
+}
+
 img{
     vertical-align: bottom;
 }
@@ -11,11 +16,13 @@ img{
     width: 40px;
     height: 40px;
 }
+
 .footer{
     background-color: #333;
     color: #aaa;
     text-align: center;
     padding: 10px 0;
+    
 }
 .item-group{
     width: 100%;
@@ -55,6 +62,20 @@ img{
     margin: 60px 0; /*有個問題*/
     background-color: #ffa;
 }
+.up-btn{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    opacity: 0.8;
+}
+.up-btn img{
+    width: 50%;
+    height: 50%;
+}
+nav{
+    font-size: 16px;
+}
+
 
 /*設定桌機*/
 @media screen and (min-width: 768px) {
@@ -84,7 +105,7 @@ img{
 }
 .header{
     height: 50px;
-    background-color: #ccc;
+    background-color: #282923;
     position: relative;
 }
 .logo{
@@ -103,7 +124,7 @@ img{
 .menu_btn{
     width: 40px;
     height: 40px;
-    background-color: #000;
+    background-color: #0000002d;
     display: block;
     position: absolute; /*永遠在那個位置*/
     top: 5px;
@@ -148,7 +169,7 @@ nav a{
         position: absolute;
         top: 50px;
         left: -100%;
-        transition: .5s;
+        transition: .5s;    
     }
     .logo a{
         padding-top: 5px;
