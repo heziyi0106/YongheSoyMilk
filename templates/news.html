@@ -9,13 +9,14 @@
 
 <!-- CSS -->
 {% block css%}
-<link rel="stylesheet" type="text/css" href="../static/css/news.css">
+<link rel="stylesheet" type="text/css" href="../static/css/news2.css">
 {% endblock %}
 
 
 <!-- 內容 -->
 {% block Context%}
 	
+	<h2>最新消息</h2>
 	<!-- 顯示news的資料，從news函式中傳遞的，用物件屬性方式取值 -->
 	{% for news in news_list %}
 

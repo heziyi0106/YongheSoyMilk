@@ -1,0 +1,19 @@
+img{
+    vertical-align: bottom;
+    width: 100%;
+}
+
+.newInfo{
+    display: flex;
+    background-color: rgb(228, 228, 181);
+    margin-bottom: 30px;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    
+}
+
+.newInfo img{
+    width: 400px;
+    padding-right: 20px;
+}

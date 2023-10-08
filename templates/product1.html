@@ -1,0 +1,67 @@
+{% extends "BasePage.html" %}
+
+{% block TitleName %}
+菜單
+{% endblock %}
+
+
+{% block css %}
+<!-- <link rel="stylesheet" type="text/css" href="/static/css/product.css" /> -->
+<style>
+	*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.wrap{
+    width: 960px;
+    margin: auto;
+}
+.item .pic img{
+	width: 100%;
+}
+.item{
+	margin: 0 10px 20px;
+}
+.item-group{
+	display: flex;
+}
+</style>
+{% endblock %}
+
+
+
+{% block Context %}
+
+
+
+
+
+<div class="about">
+	<div class="wrap"> <!--固定寬-->
+		<div class="title">產品介紹</div>
+
+		{% for row in data %}
+
+		<div class="item-group">
+			<div class="item">
+				<div class="pic">
+					<img src="{{row.photo_url}}">
+				</div>
+
+				<div class="text">
+					<p>{{row.name}}</p>
+					<span>NT:${{row.price}}</span>
+					<br />
+				
+				<!-- 導到加入購物車的頁面(加入功能)、傳送id(主鍵) -->
+					<a href="/addtocart/add/{{row.id}}/">加入購物車</a> 
+				</div>
+			</div>
+		</div>
+
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock %}
