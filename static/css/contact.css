@@ -4,16 +4,14 @@
 }
 
 #contact{
-	/* margin-left: 30%;
-	margin-bottom: 10%; */
 	margin-top: 30px;
-	
 }
 
 #contact h2{
-	text-align: center;
-	font-size: 40px;
-	margin-bottom: 30px;
+    text-align: center;
+    font-size: 46px;
+    margin-bottom: 30px;
+	padding-top: 20px;
 }
 
 .contact_form{
@@ -45,7 +43,7 @@
 .form-group{
 
 	margin: 2%;
-
+	
 }
 
 
@@ -53,6 +51,7 @@
 
 	background-color: #0000ff;
 	color: #ffffff;
+	margin-top: 0.5em;
 	padding: 0.5em 1em;
 	border: transparent; /*邊框線整個透明*/
 	width: 100%;

@@ -6,84 +6,62 @@
 
 
 {% block css %}
-<link rel="stylesheet" type="text/css" href="/static/css/product.css" />
+<!-- <link rel="stylesheet" type="text/css" href="/static/css/product.css" /> -->
+<style>
+	*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.wrap{
+    width: 960px;
+    margin: auto;
+}
+.item .pic img{
+	width: 100%;
+}
+.item{
+	margin: 0 10px 20px;
+}
+.item-group{
+	display: flex;
+}
+</style>
 {% endblock %}
+
 
 
 {% block Context %}
 
-	<div class="wrap">
-		<form action="" method="get"> <!-- action未寫:傳給自己，之後傳到travel/views.py，用函式在django查詢。採用get名碼方式傳送 -->
-			<div class="form-item">
-				關鍵字查詢：<input type="text" name="qgoods" /> <!-- name:接收的變數名稱-->
-			</div>
 
-			<div class="form-item">
-				價格範圍：<input type="text" name="startp" /> ～ 	<input type="text" name="endp" /> <!--～要全形-->
-			</div>
-			<div class="form-item">
-				<input type="submit" value="查詢"/> <!-- 單一標籤的結尾帶/ -->
-			</div>
-		</form>
-	</div>
 
-	<div class="GoodsArea">
-		<div class="wrap">
-			<div class="title"><h2>產品清單</h2>	</div>
-			
-			{% for row in data %}
-			
-			<div class="goods-group">
-				<div class="goodsinfo">
-					<img src="{{row.photo_url}}">	
+
+
+<div class="about">
+	<div class="wrap"> <!--固定寬-->
+		<div class="title">產品介紹</div>
+
+		{% for row in data %}
+
+		<div class="item-group">
+			<div class="item">
+				<div class="pic">
+					<img src="{{row.photo_url}}">
+				</div>
+
+				<div class="text">
 					<p>{{row.name}}</p>
 					<span>NT:${{row.price}}</span>
 					<br />
-					<!-- 導到加入購物車的頁面(加入功能)、傳送id(主鍵) -->
+				
+				<!-- 導到加入購物車的頁面(加入功能)、傳送id(主鍵) -->
 					<a href="/addtocart/add/{{row.id}}/">加入購物車</a> 
 				</div>
 			</div>
-
-			{% endfor %}
 		</div>
-	</div>
-	
 
-	<div class="GoodsArea">
-		<!-- 載入travel/view.py函式中的data資料 -->
-		{% for row in data %}
-			<div class="goodsinfo">
-				<img src="{{row.photo_url}}">	
-				<p>{{row.name}}</p>
-				<span>NT:${{row.price}}</span>
-				<br />
-				<!-- 導到加入購物車的頁面(加入功能)、傳送id(主鍵) -->
-				<a href="/addtocart/add/{{row.id}}/">加入購物車</a> 
-			</div>
 		{% endfor %}
 	</div>
-
-
-	<!-- 分頁的html -->
-	<div style="clear: both;"></div> <!--把浮板特效取消-->
-
-	<div style="float: left;height: 60px;padding-top: 100px;padding-left: 45%;">
-
-		{% if data.has_previous %} <!-- 如果可以往前/上一頁 -->
-
-			<a href="?page={{data.previous_page_number}}&qtravel={{travelkey}}&startp={{startprice}}&endp={{endprice}}">上一頁</a>
-
-
-		{% endif %}
-
-		{% if data.has_next %} <!-- 如果可以往後/下一頁 -->
-
-			<a href="?page={{data.next_page_number}}&qtravel={{travelkey}}&startp={{startprice}}&endp={{endprice}}">下一頁</a>
-
-
-		{% endif %}
-
-	</div>
-
+</div>
 
 {% endblock %}

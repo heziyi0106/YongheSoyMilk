@@ -3,7 +3,6 @@
 	padding: 0;
 	list-style: none;
 }
-
 .wrap{
     width: 960px;
     margin: auto;
@@ -12,25 +11,32 @@
 img{
 	vertical-align: bottom;
 }
+.title{
+	background: #ffffff;
+	padding-bottom: 0;
+}
 
-.contact{
-	padding-top: 30px;
+form{
+	width: 100%;
 }
 
 .form-item{
 	padding: 10px;
 }
 
-.GoodsArea .title{
-	background-color: #ffffff;
+
+.goods-group{
+	width: 960px;
+    margin: auto;
+	display: flex;
 }
-/* 
+
 .GoodsArea{
 	max-width: 100%;
 	margin-top: 60px;
-} */
+}
 
-/* .goodsinfo{
+.goodsinfo{
 	width: 21.5%;
 	float: left;
 	height: 450px;
@@ -46,6 +52,6 @@ img{
 
 .goodsinfo span{
 	font-size: 18px;
-} */
+} 
 
 
