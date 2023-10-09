@@ -6,15 +6,10 @@
 
 	<!-- <title>永和豆漿--手作的美味</title> -->
 	<title>{% block TitleName %}{% endblock %}</title>
-	<!--
-		通常會在這個區域放入： css 檔、javascript 、google-AD,SEO(FB,Google)
-	-->
-	<link href="/static/css/reset.css" rel="stylesheet">
-	<link href="/static/css/index3.css" rel="stylesheet">
-	
 
-	<!-- <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon"> -->
+	<link href="/static/css/index4.css" rel="stylesheet">
 	<link rel="shortcut icon" href="/static/images/logo2.png" type="image/x-icon">
+
 
 	
 	<!-- 自定義CSS -->
@@ -23,9 +18,6 @@
 
 	<!-- 自定義JS -->	
 	{% block js %}
-
-
-
 	{% endblock %}
 
 </head>
@@ -82,10 +74,52 @@
 		</div>
 	</div>
 
-	<div class="footer">
-		<span>&copy; copyright 2023 by 北峰永和豆漿</span>
-	</div>
 
+	<div class="main-footer"> 
+        <div class="container">
+            <div class="footer-item">
+                <h4>店家資訊</h4>
+                <nav>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 電話：</i></a>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 地址：</i></a>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 統編：</i></a>                    
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>關於我們</h4>
+                <nav>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 關於我們</i></a>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 最新消息</i></a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>產品介紹</h4>
+                <nav>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 燒餅油條</i></a>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 飯糰</i></a>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 煎物烤物</i></a>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 包子饅頭</i></a>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 飲料</i></a>
+                </nav>
+            </div>
+            <div class="footer-item footer-subs">
+                <h4>聯絡我們</h4>
+                <nav>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 臉書粉專</i></a>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> Line@</i></a>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 電話聯繫</i></a>
+                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> Email</i></a>                    
+                    <!-- <form action="">
+                        <input type="text" name="" id="">
+                        <input type="submit" value="訂閱">
+                    </form> -->
+                </nav>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright &copy; 2023 by 北峰永和豆漿 版權所有
+        </div>
+    </div>
 
 	<div class="up-btn">
 		<a href="#logo"><img src="/static/images/arrow-right.png" alt=""></a>
