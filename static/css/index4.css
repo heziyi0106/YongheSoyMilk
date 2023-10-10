@@ -1,14 +1,94 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
 *{
     margin: 0;
     padding: 0;
     list-style: none;
     font-family: 'Noto Sans TC', sans-serif;
 }
-body{
-    background-color: #000;
+html,body{
+    height: 100%;    /*讓畫面滿版*/        
 }
+body{
+    display: flex;;
+    flex-direction: column;
+}
+
+/*header*/
+.main-header{
+    background:linear-gradient(0deg, #fe70d8,#3713c1);
+}
+.main-header .container{
+    display: flex;
+    align-items: center; /*所有項目垂直居中*/
+    padding: 20px;
+    max-width: 1200px; /*RWD起手式*/
+    margin: auto;
+}
+.main-header .logo{
+    width: 100px;
+
+}
+.main-header .logo img{
+    width: 100%;
+    vertical-align: middle;
+}
+.main-header .main-nav{
+    margin: auto;
+    display: flex; /*會變block，動畫效果可以出來*/
+}
+.main-header .main-nav a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 1em;
+    position: relative;
+    transform: translateY(0px);
+    transition: .3s;
+}
+.main-header .main-nav a:hover{
+    transform: translateY(-5px);
+}
+.main-header .main-nav a:after{
+    content: "";
+    position: absolute;
+    left: 50%; /*一開始底線沒出現*/
+    right: 50%;
+    bottom: -5px;
+    height: 0;
+    border-bottom: 1px solid #fff;
+    transition: .3s;
+}
+.main-header .main-nav a:hover:after{
+    left: 0; /*摸到後，底線出來*/
+    right: 0;
+}
+.main-header .header-search{
+    display: flex; /*緊密並排*/
+}
+.main-header .header-search button,
+.main-header .header-search input{
+    border: none;
+    background-color: #fff;
+    padding: 5px 10px;
+}
+.main-header .header-search button:focus,
+.main-header .header-search input:focus{
+    outline: none; /*焦點效果關閉*/
+}
+.main-header .header-search button{
+    border-radius: 0 200px 200px 0;
+}
+.main-header .header-search input{
+    border-radius: 200px 0 0 200px;
+}
+
+
+.main-content{
+    flex-grow: 1; /*可占滿垂直剩餘的空間*/
+}
+
+
 .main-footer{
     padding: 150px 0 0 ;
     background: linear-gradient(-20deg, #3f5494,#08c7a5);

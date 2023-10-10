@@ -23,109 +23,100 @@
 </head>
 <body>
 
-	<input type="checkbox" name="" id="menu_control">
 
-	<div class="header">
-		
-		<h1 class="logo">
-			<a href="/" name="logo"><img src="/static/images/logo1.png"></a>
-		</h1>
-		<!-- 漢堡選單(手機) -->
-		<label for="menu_control" class="menu_btn"> <!-- 透過label在遠端對checkbox操作 -->
-			<span>選單</span> <!-- 放文字用 -->
-		</label>
-		<nav>
-			<a href="/">關於我們</a>
-			<a href="/news">最新消息</a>
-			<a href="/product">產品介紹</a>
-			<a href="/notice">注意事項</a>
-			<a href="/contact">聯絡我們</a>
-			
-			{% if request.session.yhm == 'good' %}
-
-			
-				<a href="/changepassword">會員管理</a>
-				<a href="/myorder">我的訂單</a>
-				<a href="/cart">購物車</a>
-				<a href="/photos">圖片區</a>
-				<a href="/logout">登出</a>
-
-			{% else %}
-
-				<a href="/login">登入</a>
-
-			{% endif %}
-		</nav>
-		
-	</div>
-		
-		<!-- <div id="wrapper"> -->
-	<div class="wrap">
-		<div class="content">
-
-			{% block AdArea %}
-			{% endblock %}
-			
-				
-			{% block Context %}
-			{% endblock %}
-
-			
+		<div class="main-header">
+			<div class="container">
+				<a href="#" class="logo">
+					<img src="/static/images/logo2.png" alt="YH-logo">
+				</a>
+	
+				<nav class="main-nav">             
+					<a href="/">關於我們</a>
+					<a href="/news">最新消息</a>
+					<a href="/product">產品介紹</a>
+					<a href="/notice">注意事項</a>
+					<a href="/contact">聯絡我們</a>
+	
+	
+					{% if request.session.yhm == 'good' %}
+					<a href="/changepassword">會員管理</a>
+					<a href="/myorder">我的訂單</a>
+					<a href="/cart">購物車</a>
+					<a href="/photos">圖片區</a>
+					<a href="/logout">登出</a>
+	
+					{% else %}
+					<a href="/login">登入</a>
+					{% endif %}
+				</nav>
+				<form action="" class="header-search">
+					<input type="search" name="" id="">
+					<button><i class="fa fa-search" aria-hidden="true"></i></button>
+				</form>
+			</div>
 		</div>
-	</div>
-
-
-	<div class="main-footer"> 
-        <div class="container">
-            <div class="footer-item">
-                <h4>店家資訊</h4>
-                <nav>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 電話：</i></a>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 地址：</i></a>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 統編：</i></a>                    
-                </nav>
-            </div>
-            <div class="footer-item">
-                <h4>關於我們</h4>
-                <nav>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 關於我們</i></a>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 最新消息</i></a>
-                </nav>
-            </div>
-            <div class="footer-item">
-                <h4>產品介紹</h4>
-                <nav>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 燒餅油條</i></a>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 飯糰</i></a>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 煎物烤物</i></a>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 包子饅頭</i></a>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 飲料</i></a>
-                </nav>
-            </div>
-            <div class="footer-item footer-subs">
-                <h4>聯絡我們</h4>
-                <nav>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 臉書粉專</i></a>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> Line@</i></a>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 電話聯繫</i></a>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"> Email</i></a>                    
-                    <!-- <form action="">
-                        <input type="text" name="" id="">
-                        <input type="submit" value="訂閱">
-                    </form> -->
-                </nav>
-            </div>
-        </div>
-        <div class="copyright">
-            Copyright &copy; 2023 by 北峰永和豆漿 版權所有
-        </div>
-    </div>
-
-	<div class="up-btn">
-		<a href="#logo"><img src="/static/images/arrow-right.png" alt=""></a>
-	</div>
-
-	<!-- </div> -->
+	
+	
+		<div class="main-content">
+			<div class="container">
+				
+				{% block AdArea %}
+				{% endblock %}
+				
+					
+				{% block Context %}
+				{% endblock %}
+	
+			</div>
+		</div>
+	
+	
+		<div class="main-footer"> 
+			<div class="container">
+				<div class="footer-item">
+					<h4>店家資訊</h4>
+					<nav>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 電話：</i></a>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 地址：</i></a>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 統編：</i></a>                    
+					</nav>
+				</div>
+				<div class="footer-item">
+					<h4>關於我們</h4>
+					<nav>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 關於我們</i></a>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 最新消息</i></a>
+					</nav>
+				</div>
+				<div class="footer-item">
+					<h4>產品介紹</h4>
+					<nav>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 燒餅油條</i></a>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 飯糰</i></a>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 煎物烤物</i></a>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 包子饅頭</i></a>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 飲料</i></a>
+					</nav>
+				</div>
+				<div class="footer-item footer-subs">
+					<h4>聯絡我們</h4>
+					<nav>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 臉書粉專</i></a>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> Line@</i></a>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 電話聯繫</i></a>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> Email</i></a>                    
+						<form action="">
+							<input type="text" name="" id="">
+							<input type="submit" value="訂閱">
+						</form>
+					</nav>
+				</div>
+			</div>
+			<div class="copyright">
+				Copyright &copy; 2023 by 北峰永和豆漿 版權所有
+			</div>
+		</div>
+	
 
 </body>
 </html>
