@@ -23,6 +23,7 @@ body::-webkit-scrollbar {
 /*header*/
 .main-header{
     background:linear-gradient(0deg, #fe70d8,#3713c1);
+    box-shadow:0 5px 10px #00000049;
 }
 .main-header .container{
     display: flex;
@@ -52,9 +53,6 @@ body::-webkit-scrollbar {
     transform: translateY(0px);
     transition: .3s;
 }
-.main-header .main-nav a:hover{
-    transform: translateY(-5px);
-}
 .main-header .main-nav a:after{
     content: "";
     position: absolute;
@@ -68,6 +66,25 @@ body::-webkit-scrollbar {
 .main-header .main-nav a:hover:after{
     left: 0; /*摸到後，底線出來*/
     right: 0;
+}
+.main-header .main-nav li{
+    position: relative;
+}
+.main-header .main-nav li:hover > ul{
+    /* transform: translateY(-5px); */
+    display: block;
+    /* height: 100px; */
+    
+}
+.main-header .main-nav ul{
+    position: absolute;
+    /* top: 100px; */
+    background-color: #888;
+    width: 120px;
+    display: none;
+    /* font-size: 24px; */
+    line-height: 2;
+    padding: 10px;
 }
 .main-header .header-search{
     display: flex; /*緊密並排*/
@@ -90,17 +107,51 @@ body::-webkit-scrollbar {
 }
 
 
+
+
+
 /*content*/
 .main-content{
     flex-grow: 1; /*可占滿垂直剩餘的空間*/
+    margin-bottom: 50px;
+}
+
+.banner img{
+    width: 100%;
 }
 .main-content .container{    
     max-width: 1200px; /*RWD起手式*/
     margin: auto;
+    margin-top: 50px;
+
+}
+.wrap{
+    display: flex;
+    margin-bottom: 50px;
+}
+.main-content h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.main-content .index-item{
+    display: flex;
+    flex-direction: column; /*排版的流向改為直向*/
+    text-align: center;
+    height: 100%;
+    width: 100%;
     
+    padding: 20px;
+}
+.main-content .index-item img{
+    width: 100%;    
+    height: 100%;
+    vertical-align: bottom;
 }
 
-/*side*/
+
+
+
+/*side-btn*/
 .side-btn .up-btn{
     width: 50px;
     height: 50px;
@@ -123,9 +174,6 @@ body::-webkit-scrollbar {
 .side-btn .up-btn a:hover{
     color: #ff0;
 }
-
-
-
 .side-btn .shopping-cart{
     width: 50px;
     height: 50px;
@@ -147,6 +195,43 @@ body::-webkit-scrollbar {
 .side-btn .shopping-cart i:hover{
     color: #ff0;
 }
+
+
+
+/*side-menu-cart*/
+#side-menu-switch{ /*隱藏input*/
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+
+.side-menu{        
+    position: fixed;
+    right: 0;
+    top: 200px;
+    padding: 20px;
+    background-color: #fff;
+    width: 300px;
+    box-shadow: -5px 0 10px #88888877;
+    transform: translateX(100%); 
+}
+.side-menu .cart-item{
+    padding: 20px 0;
+}
+.side-menu .cart-item .txt{
+    margin-bottom: 20px;
+}
+
+.side-menu input{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
 
 
 

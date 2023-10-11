@@ -22,114 +22,167 @@
 
 </head>
 <body>
+	<!-- <input type="checkbox" name="" id="RWD-btn"> -->
+	<!-- <input type="checkbox" name="" id="side-menu-switch"> -->
+
+	<div class="main-header">
+		<div class="container">
+			<a href="/" class="logo" name="logo">
+				<img src="/static/images/logo2.png" alt="YH-logo">
+			</a>
+
+			<ul class="main-nav">             
+				<li><a href="/">關於我們</a></li>
+				<li><a href="/news">最新消息</a></li>
+				<li><a href="/product">產品介紹</a></li>
+				<li><a href="/contact">聯絡我們</a></li>
 
 
-		<div class="main-header">
-			<div class="container">
-				<a href="/" class="logo" name="logo">
-					<img src="/static/images/logo2.png" alt="YH-logo">
-				</a>
-	
-				<nav class="main-nav">             
-					<a href="/">關於我們</a>
-					<a href="/news">最新消息</a>
-					<a href="/product">產品介紹</a>
-					<a href="/notice">注意事項</a>
-					<a href="/contact">聯絡我們</a>
-	
-	
-					{% if request.session.yhm == 'good' %}
-					<a href="/changepassword">會員管理</a>
-					<a href="/myorder">我的訂單</a>
-					<a href="/cart">購物車</a>
-					<a href="/photos">圖片區</a>
-					<a href="/logout">登出</a>
-	
-					{% else %}
-					<a href="/login">登入</a>
-					{% endif %}
+				{% if request.session.yhm == 'good' %}
+				<li><a href="#">會員中心</a>
+					<ul>
+						<li><a href="/changepassword">會員管理</a></li>
+						<li><a href="/myorder">我的訂單</a></li>
+						<li><a href="/cart">購物車</a></li>
+						<li><a href="/photos">圖片區</a></li>
+					</ul>
+				</li>					
+				<li><a href="/logout">登出</a></li>
+
+				{% else %}
+				<li><a href="/login">登入</a></li>
+				<li><a href="/register">註冊</a></li>
+				{% endif %}
+			</ul>
+			<form action="" class="header-search">
+				<input type="search" name="" id="">
+				<button><i class="fa fa-search" aria-hidden="true"></i></button>
+			</form>
+		</div>
+	</div>
+
+
+	<div class="main-content">
+		<div class="banner">
+			<!-- <img src="https://picsum.photos/1200/300/?random=10"> -->
+			<img src="/static/images/soybean_D.jpg">
+		</div>
+		<div class="container">
+			
+			{% block AdArea %}
+			{% endblock %}
+			
+				
+			{% block Context %}
+			{% endblock %}
+
+		</div>
+	</div>
+
+
+	<div class="main-footer"> 
+		<div class="container">
+			<div class="footer-item">
+				<h4>店家資訊</h4>
+				<nav>
+					<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 電話：</i></a>
+					<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 地址：</i></a>
+					<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 統編：</i></a>                    
 				</nav>
-				<form action="" class="header-search">
-					<input type="search" name="" id="">
-					<button><i class="fa fa-search" aria-hidden="true"></i></button>
-				</form>
+			</div>
+			<div class="footer-item">
+				<h4>關於我們</h4>
+				<nav>
+					<a href="/"><i class="fa fa-angle-right" aria-hidden="true"> 關於我們</i></a>
+					<a href="/new"><i class="fa fa-angle-right" aria-hidden="true"> 最新消息</i></a>
+				</nav>
+			</div>
+			<div class="footer-item">
+				<h4>產品介紹</h4>
+				<nav>
+					<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 燒餅油條</i></a>
+					<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 飯糰</i></a>
+					<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 煎物烤物</i></a>
+					<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 包子饅頭</i></a>
+					<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 飲料</i></a>
+				</nav>
+			</div>
+			<div class="footer-item footer-subs">
+				<h4>聯絡我們</h4>
+				<nav>
+					<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 臉書粉專</i></a>
+					<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> Line@</i></a>
+					<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 電話聯繫</i></a>
+					<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> Email來信</i></a>                    
+					<form action="">
+						<input type="text" name="" id="">
+						<input type="submit" value="訂閱">
+					</form>
+				</nav>
 			</div>
 		</div>
-	
-	
-		<div class="main-content">
-			<div class="container">
-				
-				{% block AdArea %}
-				{% endblock %}
-				
-					
-				{% block Context %}
-				{% endblock %}
-	
-			</div>
+		<div class="copyright">
+			Copyright &copy; 2023 by 永和豆漿 版權所有
 		</div>
+	</div>
+
 	
-	
-		<div class="main-footer"> 
-			<div class="container">
-				<div class="footer-item">
-					<h4>店家資訊</h4>
-					<nav>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 電話：</i></a>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 地址：</i></a>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 統編：</i></a>                    
-					</nav>
-				</div>
-				<div class="footer-item">
-					<h4>關於我們</h4>
-					<nav>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 關於我們</i></a>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 最新消息</i></a>
-					</nav>
-				</div>
-				<div class="footer-item">
-					<h4>產品介紹</h4>
-					<nav>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 燒餅油條</i></a>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 飯糰</i></a>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 煎物烤物</i></a>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 包子饅頭</i></a>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 飲料</i></a>
-					</nav>
-				</div>
-				<div class="footer-item footer-subs">
-					<h4>聯絡我們</h4>
-					<nav>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 臉書粉專</i></a>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> Line@</i></a>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> 電話聯繫</i></a>
-						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"> Email</i></a>                    
-						<form action="">
-							<input type="text" name="" id="">
-							<input type="submit" value="訂閱">
-						</form>
-					</nav>
-				</div>
-			</div>
-			<div class="copyright">
-				Copyright &copy; 2023 by 北峰永和豆漿 版權所有
-			</div>
-		</div>
-	
-	
-	<div class="side-btn">
-		<div class="containter">
+	<div class="side">
+		<div class="side-btn">
+		
 			<div class="up-btn">
 				<a href="#logo"><i class="fa fa-caret-up" aria-hidden="true"></i></a>
 			</div>
 			<div class="shopping-cart">
-				<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+				<label for="side-menu-switch">  
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i>                    
+			</label>
 			</div>
 			
+			
 		</div>
+		
+		<div class="side-menu">
+			<h2>購物車</h2>
+			<h3>購物車是空的，請至產品頁購物！</h3>
 
+			<div class="cart-item">
+				<div class="pic">
+					<img src="https://picsum.photos/300/200/?random=10">
+				</div>
+				<div class="txt">
+					<span>商品名稱</span>
+					<span>數量</span>
+					<span>金額</span>				
+				</div>
+				<div class="pic">
+					<img src="https://picsum.photos/300/200/?random=10">
+				</div>
+				<div class="txt">
+					<span>商品名稱</span>
+					<span>數量</span>
+					<span>金額</span>				
+				</div>
+				<div class="pic">
+					<img src="https://picsum.photos/300/200/?random=10">
+				</div>
+				<div class="txt">
+					<span>商品名稱</span>
+					<span>數量</span>
+					<span>金額</span>				
+				</div>
+			</div>
+			<input type="button" name="Order" onClick="window.location='/cartorder/'" value="我要結帳" />
+
+
+
+		</div>
 	</div>
+
+	
+	
+
+
 
 </body>
 </html>

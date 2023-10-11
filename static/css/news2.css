@@ -1,19 +1,62 @@
-img{
-    vertical-align: bottom;
-    width: 100%;
-}
-
-.newInfo{
+.wrap{
     display: flex;
-    background-color: rgb(228, 228, 181);
-    margin-bottom: 30px;
-    border: 2px solid;
-    border-radius: 10px;
-    padding: 20px;
-    
+    margin-bottom: 50px;
+    flex-direction: column;
 }
-
-.newInfo img{
-    width: 400px;
-    padding-right: 20px;
+h3{
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+.item{
+    width: 1198px;
+    margin: 0 15px;
+    display: flex;
+    background-color:rgba(255, 255, 255, .6);
+    border: 1px solid #888;
+    /*box-shadow: 0 10px 30px rgba(160, 0,0, .5); /*x軸 y軸 模糊程度 色彩*/
+    margin-bottom: 40px;
+    border-radius: 20px;
+    height: 300px;
+}
+.item:first-child{
+    margin-top: 20px;
+}
+.item .pic{
+    width: 35%;
+}
+.item .pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*把變形的圖片改回來*/
+    border-radius: 20px;
+}
+.item .txt{
+    width: 65%;
+    padding: 30px; /*新增pd後*/
+    box-sizing: border-box; /*要把盒子寬度調整回來*/
+    display: flex; /*將文字重新排版*/
+    flex-direction: column; /*排版的流向改為直向*/
+    /* justify-content: center; /*整個文字區塊在垂直置中*/
+}
+.item .txt p{
+    overflow: hidden;
+    /* white-space: nowrap; */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.item .txt .btn{
+    line-height: 1.5em;
+    border: 1px solid #ccc;
+    padding: 0 1em;
+    align-self: flex-end; /*對齊自己*/
+    text-decoration: none; /*去除底線*/
+    border-radius: 200px;
+    margin-top: auto;
+    color: #999;
+}
+.item .txt .btn:hover{
+    background-color:#ccc;
+    color: #fff;
 }

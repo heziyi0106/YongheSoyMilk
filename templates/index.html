@@ -15,30 +15,35 @@
 
 {% block Context %}
 
-<div id="hot_news">
-	<p>最新消息列表</p>
-
+<h2>最新消息列表</h2>
+<div class="wrap">
 	{% for row in data %}
-	<div class="hot">
-		<img src="{{row.photo_url}}">
-		<span>{{row.title}}</span>
-	</div>
+		<div class="index-item">
+			<div class="pic">
+				<img src="{{row.photo_url}}">
+			</div>
+			<div class="txt">
+				<span>{{row.title}}</span>
+			</div>
+		</div>
 	{% endfor %}
 </div>
 
-<div style="clear: both; height: 30px;"></div>
 
-<div id="recommendproduct">
-	<p>美食推薦</p>
-
+<h2>美食推薦</h2>
+<div class="wrap">
 	{% for row in product %}
-	<div class="producthot">
-		<img src="{{row.photo_url}}">
-		<span>{{row.name}}</span>
-	</div>
-	{% endfor%}
+		<div class="index-item">
+			<div class="pic">
+				<img src="{{row.photo_url}}">
+			</div>
+			<div class="txt">
+				<span>{{row.name}}</span>
+			</div>
+		</div>
+	{% endfor %}
 </div>
-
-<div style="clear: both; height: 30px;"></div> 
-
 {% endblock %}
+
+
+
