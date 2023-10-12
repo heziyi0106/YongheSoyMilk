@@ -54,7 +54,7 @@ def cart(request):  #顯示購物車內容
     else:
         empty = 0
     
-    return render(request,'cart.html',locals()),redirect('/',locals())
+    return render(request,'cart.html',locals())
 
 
 #將商品加入購物車，並沒有將資料寫入資料表中(此有用到判斷購物車內的動作是哪種:ctype)

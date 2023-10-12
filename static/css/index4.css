@@ -22,19 +22,20 @@ body::-webkit-scrollbar {
 
 /*header*/
 .main-header{
-    background:linear-gradient(0deg, #fe70d8,#3713c1);
-    box-shadow:0 5px 10px #00000049;
+    /* background:linear-gradient(0deg, #fe70d8,#3713c1); */
+    background: #EBF3A6;
+    box-shadow:0 10px 10px #00000049;
 }
 .main-header .container{
     display: flex;
     align-items: center; /*所有項目垂直居中*/
-    padding: 20px;
+    padding: 10px 20px;
     max-width: 1200px; /*RWD起手式*/
     margin: auto;
     
 }
 .main-header .logo{
-    width: 100px;
+    width: 80px;
 
 }
 .main-header .logo img{
@@ -47,7 +48,8 @@ body::-webkit-scrollbar {
 }
 .main-header .main-nav a{
     text-decoration: none;
-    color: #fff;
+    /* color: #fff; */
+    color: #3E2C22;
     padding: 5px 1em;
     position: relative;
     transform: translateY(0px);
@@ -60,7 +62,8 @@ body::-webkit-scrollbar {
     right: 50%;
     bottom: -5px;
     height: 0;
-    border-bottom: 1px solid #fff;
+    /* border-bottom: 1px solid #fff; */
+    border-bottom: 1px solid #3E2C22;
     transition: .3s;
 }
 .main-header .main-nav a:hover:after{
@@ -93,7 +96,8 @@ body::-webkit-scrollbar {
 .main-header .header-search input{
     border: none;
     background-color: #fff;
-    padding: 5px 10px;
+    color: #3E2C22;
+    
 }
 .main-header .header-search button:focus,
 .main-header .header-search input:focus{
@@ -101,9 +105,12 @@ body::-webkit-scrollbar {
 }
 .main-header .header-search button{
     border-radius: 0 200px 200px 0;
+    padding: 5px 15px 5px 10px;
+    
 }
 .main-header .header-search input{
-    border-radius: 200px 0 0 200px;
+    border-radius: 200px 0 0 200px;    
+    padding: 5px 10px;
 }
 
 
@@ -118,6 +125,7 @@ body::-webkit-scrollbar {
 
 .banner img{
     width: 100%;
+    margin-bottom: 30px;
 }
 .main-content .container{    
     max-width: 1200px; /*RWD起手式*/
@@ -127,11 +135,13 @@ body::-webkit-scrollbar {
 }
 .wrap{
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 70px;    
 }
 .main-content h2{
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #3E2C22;
 }
 .main-content .index-item{
     display: flex;
@@ -155,15 +165,16 @@ body::-webkit-scrollbar {
 .side-btn .up-btn{
     width: 50px;
     height: 50px;
-    background-color: #000;
+    background-color: #6D7050;
     border-radius: 50%;
     position: fixed;
     right: 30px;
-    bottom: 85px;
+    bottom: 55px;
     box-shadow: 3px 2px 5px rgba(0, 0, 0, .3);
 }
 .side-btn .up-btn a{
-    color: #c4c4c4;
+    color: #D8E65C;
+    /* color: #fff; */
     transition: .2s;
     position: absolute;
     font-size: 55px;
@@ -171,10 +182,14 @@ body::-webkit-scrollbar {
     left: 9px;
     transition: .3s;
 }
-.side-btn .up-btn a:hover{
-    color: #ff0;
+.side-btn .up-btn:hover a{
+    color: #fff;
 }
-.side-btn .shopping-cart{
+.side-btn .up-btn:hover{
+    
+    background-color: hsl(66, 37%, 38%);
+}
+/* .side-btn .shopping-cart{
     width: 50px;
     height: 50px;
     background-color: #000;
@@ -194,12 +209,12 @@ body::-webkit-scrollbar {
 }
 .side-btn .shopping-cart i:hover{
     color: #ff0;
-}
+} */
 
 
 
 /*side-menu-cart*/
-#side-menu-switch{ /*隱藏input*/
+/* #side-menu-switch{ 
     position: absolute;
     opacity: 0;
     z-index: -1;
@@ -224,13 +239,13 @@ body::-webkit-scrollbar {
 }
 
 .side-menu input{
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-}
+} */
 
 
 
@@ -239,8 +254,10 @@ body::-webkit-scrollbar {
 
 /*footer*/
 .main-footer{
-    padding: 150px 0 0 ;
-    background: linear-gradient(-20deg, #3f5494,#08c7a5);
+    padding: 100px 0 0 ;
+    /* background: linear-gradient(-20deg, #3f5494,#08c7a5); */
+    /* background: linear-gradient(-20deg,#DAEB49, #EBF3A6); */
+    background: #EBF3A6;
 }
 .main-footer .container{
     display: flex;
@@ -258,18 +275,23 @@ body::-webkit-scrollbar {
 
 }
 .footer-item nav a{
-    color: #fff;
+    /* color: #fff; */
+    color: #3E2C22;
     line-height: 1.4;
     text-decoration: none;
     padding: 5px 0;
+    
 }
 .footer-item nav a:hover{
-    color: #fa0;
+    color:#E85231;
+    
 }
 .footer-item h4{
     font-size: 24px;
-    color: #fff;
-    border-bottom: 1px dotted #fff;
+    /* color: #fff; */
+    color:#3E2C22;
+    /* border-bottom: 1px dotted #fff; */
+    border-bottom: 1px dotted #3E2C22;
     margin-bottom: 0.5em;
     padding-bottom: 0.5em;
 }
@@ -300,6 +322,7 @@ body::-webkit-scrollbar {
     text-align: center;
     margin: 150px 0 0;
     padding: 10px 0;
-    background-color: #3e5293;
-    color: #70f6df;
+    background-color: #66694A;
+    /* color: #EBF3A6; */
+    color: #D8E65C;
 }

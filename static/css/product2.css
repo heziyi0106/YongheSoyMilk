@@ -1,6 +1,73 @@
-*{
-	margin: 0;
-	padding: 0;
-	list-style: none;
+.wrap{
+    display: flex;
+    margin-bottom: 50px;
+	flex-wrap:wrap; /*換行*/
+	
 }
+.wrap form{
+	margin: auto;
+	margin-top: 30px;
+	display: flex;
+	
+}
+.wrap form input{
+	margin-right: 20px;
+}
+.wrap form input:first-child::-webkit-input-placeholder{
+    position:relative;
+    left: .3rem;
+}
+.wrap form input:last-child{
+	margin-left: 20px;
+}
+.wrap form input[type=submit]{
+	margin-left: 0;
+	padding: 0 20px;
+	border-radius: 50px;
+}
+.wrap form .group{
+	display: flex;
+}
+
+.item{
+	/* width: 280px; */
+	width: 23%;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding: 10px;
+	text-align: center;
+}
+.item .txt{
+	line-height: 1.8;
+}
+.item .txt p{
+	font-weight: 600;
+	font-size: 24px;
+}
+.item .pic img{
+	width: 100%;
+}
+
+/*當最後一行是3個元素*/
+.item:last-child:nth-child(4n-1){
+	margin-right: calc(100%/4*1); 
+}
+/*當最後一行是2個元素*/
+.item:last-child:nth-child(4n-2){
+	margin-right: calc(100%/4*2); 
+}
+
+/*當最後一行是1個元素*/
+.item:last-child:nth-child(4n-3){
+	margin-right: calc(100%/4*3); 
+}
+
+.page{
+	text-align: center;	
+}
+.page a{
+	text-decoration: none;	
+}
+
 
