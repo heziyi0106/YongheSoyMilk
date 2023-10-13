@@ -44,9 +44,13 @@ body::-webkit-scrollbar {
 }
 .main-header .main-nav{
     margin: auto;
-    display: flex; /*會變block，動畫效果可以出來*/
+    display: flex; /*會變block，動畫效果可以出來*/    
 }
-.main-header .main-nav a{
+.main-header .main-nav > li{
+    padding: 20px 0;
+}
+
+.main-header .main-nav li > a{
     text-decoration: none;
     /* color: #fff; */
     color: #3E2C22;
@@ -55,7 +59,7 @@ body::-webkit-scrollbar {
     transform: translateY(0px);
     transition: .3s;
 }
-.main-header .main-nav a:after{
+.main-header .main-nav > li a:after{
     content: "";
     position: absolute;
     left: 50%; /*一開始底線沒出現*/
@@ -65,29 +69,38 @@ body::-webkit-scrollbar {
     /* border-bottom: 1px solid #fff; */
     border-bottom: 1px solid #3E2C22;
     transition: .3s;
+    
 }
-.main-header .main-nav a:hover:after{
+
+.main-header .main-nav > li:hover > a:after{
     left: 0; /*摸到後，底線出來*/
     right: 0;
 }
-.main-header .main-nav li{
+.main-header .main-nav > li{
     position: relative;
 }
-.main-header .main-nav li:hover > ul{
-    /* transform: translateY(-5px); */
-    display: block;
-    /* height: 100px; */
-    
+.main-header .main-nav > li:hover > ul{
+    display: block;    
 }
+.main-header .main-nav > li:hover > ul a:hover:after{
+    display: block;
+    left: 15px;    
+    right: 15px;
+    bottom: 0;
+}
+
 .main-header .main-nav ul{
     position: absolute;
-    /* top: 100px; */
-    background-color: #888;
+    top: 45px;
+    margin-top: 25px;
+    background-color:  #EBF3A6;
     width: 120px;
-    display: none;
-    /* font-size: 24px; */
+    display: none;    
     line-height: 2;
-    padding: 10px;
+    padding: 10px 0;
+    text-align: center;
+    
+    
 }
 .main-header .header-search{
     display: flex; /*緊密並排*/
@@ -148,14 +161,22 @@ body::-webkit-scrollbar {
     flex-direction: column; /*排版的流向改為直向*/
     text-align: center;
     height: 100%;
-    width: 100%;
-    
+    width: 100%;    
     padding: 20px;
+    
+}
+.main-content .index-item .pic{
+    height: 256px;
+    margin-bottom: 20px;
 }
 .main-content .index-item img{
     width: 100%;    
     height: 100%;
-    vertical-align: bottom;
+    vertical-align: middle;
+    
+}
+.main-content .index-item txt{
+    height: 120px;
 }
 
 
@@ -163,6 +184,7 @@ body::-webkit-scrollbar {
 
 /*side-btn*/
 .side-btn .up-btn{
+    font-size: 0;
     width: 50px;
     height: 50px;
     background-color: #6D7050;

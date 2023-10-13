@@ -10,12 +10,16 @@
 <style>
 .form-group:last-child{
 	display: flex;	
-	flex-grow: 1;
+	flex-direction: row;
 }
-.form-group:last-child button{
+.form-group .btn_submit{
 	width: 50%;
 }
-.form-group:last-child a{
+.form-group .btn_register{
+	width: 50%;
+}
+
+/* .form-group:last-child a{
 	width: 50%;
 	text-decoration: none;	
 	margin: 0.5em;
@@ -23,7 +27,7 @@
 	border-radius: 10px;
 	text-align: center;
 	line-height: 1.5;
-}
+} */
 </style>
 {% endblock %}
 
@@ -38,18 +42,18 @@
 		{% csrf_token %}
 
 		<div class="form-group">
-			<label>帳號</label>
-			<input type="email" name="email" class="form-control" required />
+			<label for="userid">帳號</label>
+			<input type="email" name="email" class="form-control" id="userid" required />
 		</div>
 
 		<div class="form-group">
-			<label>密碼</label>
-			<input type="password" name="password" class="form-control" required />
+			<label for="password">密碼</label>
+			<input type="password" name="password" class="form-control" id="password" required />
 		</div>
 
 		<div class="form-group">
-			<button type="submit" class="btn_submit">登入</button>
-			<a href="/register/">註冊</a>
+			<button type="submit" class="btn_submit" >登入</button>
+			<button class="btn_register"><a href="/register/">註冊</a></button>
 		</div>
 	</form>
 

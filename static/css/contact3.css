@@ -1,0 +1,77 @@
+h2{
+    text-align: center;
+}
+
+.contact_form{
+
+	border: 1px solid #ccc;
+	border-radius: 4px; /*圓角*/
+	padding: 0.5em 0.6em; /*內距*/
+	line-height: 1.15; /*線的高度*/
+	width: px;
+	margin: auto;
+	margin-bottom: 82px; /*與底部的距離*/
+	/* font-size: 100%; */
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3)
+
+
+}
+
+.form-control{
+
+	border: 1px solid #ccc;
+	border-radius: 4px; /*圓角*/
+	padding: 0.5em 0.6em; /*內距*/
+	line-height: 1.15; /*線的高度*/
+	width: 400px;
+	margin-bottom: 10px; /*與底部的距離*/
+	font-size: 100%;
+	margin-top: 5px;
+
+}
+.form-group{
+	display: flex;
+	flex-direction: column;
+	margin: 2%;
+    /* margin-bottom: 15px; */
+}
+.form-group:last-child{
+	font-size: 0;
+}
+
+.form-group label{
+    font-size: 22px;    
+	margin-bottom: 10px;
+}
+.form-group input{
+	
+}
+
+
+.btn_submit{
+
+	/* background-color: #0000ff; */
+	background-color: #6D7050;
+	color: #ffffff;
+	margin: 0.5em 0;
+	padding: 0.5em 1em;
+	border: transparent; /*邊框線整個透明*/
+	width: 100%;
+	border-radius: 10px;
+    font-size: 20px;
+	margin-right: 20px;
+	
+}
+.btn_register{
+	background-color: #4CAF50;
+	
+	margin: 0.5em 0;
+	padding: 0.5em 1em;
+	border: transparent; /*邊框線整個透明*/
+	width: 100%;
+	border-radius: 10px;
+    font-size: 20px;
+}
+.btn_register a{
+	color: #ffffff;
+}

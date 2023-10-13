@@ -6,6 +6,16 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="/static/css/contact2.css" />
+<style>
+	.form-group .select{
+		line-height: 1.5;
+		padding: 10px;
+	}
+	.form-group .select input+input{
+		margin-left: 20px;
+				
+	}
+</style>
 {% endblock %}
 
 {% block js %}
@@ -39,46 +49,48 @@
 		{% csrf_token %}
 
 		<div class="form-group">
-			<label>姓名</label>
-			<input type='text' name="uName" class="form-control" required/>
+			<label for="uName">姓名</label>
+			<input type='text' name="uName" class="form-control" id="uName" required/>
 		</div>
 
 		<div class="form-group">
-			<label>Email</label>
-			<input type='email' name="uEmail" class="form-control" required/>
+			<label for="uEmail">Email</label>
+			<input type='email' name="uEmail" class="form-control" id="uEmail" required/>
 		</div>
 
 		<div class="form-group">
-			<label>密碼</label>
-			<input type='password' name="uPassword" class="form-control" required/>
+			<label for="uPassword">密碼</label>
+			<input type='password' name="uPassword" class="form-control" id="uPassword" required/>
 		</div>
 
 		<div class="form-group">
-			<label>確認密碼</label>
-			<input type='password' name="repwd" class="form-control" required/>
+			<label for="repwd">確認密碼</label>
+			<input type='password' name="repwd" class="form-control" id="repwd" required/>
 		</div>
 
 		<div class="form-group">
 			<label>性別</label>
 			<!-- 單選，預設選項為女生 -->
-			<input type='radio' name="uSex" value="F" checked />女生
-			<input type='radio' name="uSex" value="M" />男生
+			<div class="select">
+				<input type='radio' name="uSex" value="F" checked />女生
+				<input type='radio' name="uSex" value="M" />男生
+			</div>
 		</div>
 
 		<div class="form-group">
-			<label>生日</label>
-			<input type='date' name="uBir" class="form-control" required/>
-			<!-- <input type='date' name="uBir" class="form-control" required/> -->
+			<label for="uBir">生日</label>
+			<input type='date' name="uBir" class="form-control" id="uBir" required/>
+			<!-- <input type='date' name="uBir" class="form-control" id="" required/> -->
 		</div>
 
 		<div class="form-group">
-			<label>地址</label>
-			<input type='text' name="uAddr" class="form-control" required/>
+			<label for="uAddr">地址</label>
+			<input type='text' name="uAddr" class="form-control" id="uAddr" required/>
 		</div>
 
 		<div class="form-group">
-			<label>行動電話</label>
-			<input type='text' name="uTel" class="form-control" required/>
+			<label for="uTel">行動電話</label>
+			<input type='text' name="uTel" class="form-control" id="uTel" required/>
 		</div>
 
 		<div class="form-group">

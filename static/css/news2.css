@@ -44,7 +44,7 @@ h3{
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 3; /*限制3行*/
 }
 .item .txt .btn{
     line-height: 1.5em;
@@ -59,10 +59,4 @@ h3{
 .item .txt .btn:hover{
     background-color:#ccc;
     color: #fff;
-}
-.item .txt .btn:active{
-    text-overflow: none;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    /* -webkit-line-clamp: 3; */
 }

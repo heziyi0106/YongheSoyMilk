@@ -2,11 +2,55 @@ h2,h3{
     text-align: center;
 }
 h3{
-    margin: 80px 0;
-    font-size: 30px;
-    color: rgb(255, 0, 34);
+    font-size: 40px;
+    margin-bottom: 100px;
+    color:#E85231;
 }
+.wrap form{
+	width:1000px;
+    margin: auto;
+
+}
+
 table{
-    width: 100%;
-    
+    width: 1000px;
+    margin: auto;
+    border: 3px solid #666;
+    box-sizing: border-box;
 }
+
+th{
+    border: 1px solid #666;
+    padding: 6px 10px;
+    background: #ccc;
+}
+td{
+    border: 1px solid #666;
+    padding: 6px 10px;
+    text-align: center;
+}
+.input-group{
+    margin: 50px 0;
+    display: flex;
+    width: 100%;
+    font-size: 0;
+    align-items: center;
+}
+.input-group input{
+    width: 200px;
+    margin: auto;
+    font-size: 25px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+
+/* form table tr:last-child > tr{
+    border: none;
+}
+form table tr:last-child > td input{
+    font-size: 20px;
+    border: none;
+} */
