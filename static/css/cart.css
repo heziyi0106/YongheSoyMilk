@@ -2,20 +2,46 @@ h2,h3{
     text-align: center;
 }
 h3{
-    font-size: 40px;
-    margin-bottom: 100px;
+    font-size: 32px;
+    margin-bottom: 60px;
     color:#E85231;
+}
+h4{
+    font-size: 30px;
+    color: #666;
+    text-align: center;
+    padding-bottom: 20px;
+}
+h5{
+    font-size: 25px;
+}
+.wrap{
+    padding: 10px 25px;
+    align-items: start;
+    
 }
 .wrap form{
 	width:1000px;
     margin: auto;
-    
-
 }
 
+.check-wrap {
+    vertical-align: top; 
+    
+}
+.check-wrap > table{
+    width: 45%;
+}
+.check-wrap table > caption{
+    text-align: left;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+
 table{
-    width: 1000px;
-    margin: auto;
+    width: 1000px;    
+    margin: 0 auto;
     border: 3px solid #666;
     box-sizing: border-box;
 }
@@ -51,4 +77,29 @@ td{
 }
 .table td > a:hover{
 	color:#E85231;
+}
+.last td{
+    border: none;
+}
+.last input{
+    padding: 5px;
+}
+.last input+input{
+    margin-left: 10px;
+}
+.last a{
+    margin-left: 10px;
+}
+.back-btn{
+    justify-content: center;
+    padding: 20px 0;
+}
+.back-btn input{
+    padding: 5px;
+    font-size: 20px;
+    
+}
+.uni input{
+    text-align: center;
+    
 }
