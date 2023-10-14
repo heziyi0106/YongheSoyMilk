@@ -15,8 +15,23 @@ h4{
 h5{
     font-size: 25px;
 }
+.check2-wrap{
+	flex-direction: column;    
+}
+.check2-wrap .item{
+    width: 500px;
+	display: flex;
+	flex-direction: column;	
+	margin: auto;
+    text-align: center;
+    line-height: 2;
+    font-size: 23px;
+}
+.check2-wrap .item h2{
+    border-bottom: 1px dotted #666;
+}
 .wrap{
-    padding: 10px 25px;
+    padding: 0px 25px;
     align-items: start;
     
 }

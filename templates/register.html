@@ -7,14 +7,8 @@
 {% block css %}
 <link rel="stylesheet" type="text/css" href="/static/css/contact2.css" />
 <style>
-	.form-group .select{
-		line-height: 1.5;
-		padding: 10px;
-	}
-	.form-group .select input+input{
-		margin-left: 20px;
-				
-	}
+
+
 </style>
 {% endblock %}
 
@@ -68,12 +62,14 @@
 			<input type='password' name="repwd" class="form-control" id="repwd" required/>
 		</div>
 
-		<div class="form-group">
+		<div class="form-group test">
+			<div class="test2">
 			<label>性別</label>
 			<!-- 單選，預設選項為女生 -->
-			<div class="select">
+			<div>
 				<input type='radio' name="uSex" value="F" checked />女生
 				<input type='radio' name="uSex" value="M" />男生
+			</div>
 			</div>
 		</div>
 

@@ -34,9 +34,10 @@
 
 {% block Context %}
 <h2>會員登入</h2>
+<h3>{{ msg }}</h3>
 <div class="wrap">
 	
-	<span style="color: #ff0000;">{{ msg }}</span>
+	
 
 	<form class="contact_form" action="" method="post">
 		{% csrf_token %}

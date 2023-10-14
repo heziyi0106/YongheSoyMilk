@@ -11,15 +11,16 @@
 
 {% block Context %}
 
-<div style="margin-top: 50px;"></div>
 
-<div id="cartDiv">
-	
-	<!-- 非信用卡，即ATM或現金付款後的頁面 -->
-	<p class="title">訂購完成資料</p>
-	<p class="subject">常感謝您的購買，我們會盡快處理您的訂單</p>
-	<p class="desc">親愛的<strong>{{ name }}</strong>(先生/小姐)，訂單已成立</p>
-	<p class="desc"><a href="/cartordercheck/?orderid={{orderid}}&customemail={{email}}">訂單詳細資料</a></p>
+
+<div class="wrap check2-wrap">
+	<div class="item">
+		<!-- 非信用卡，即ATM或現金付款後的頁面 -->
+		<h2>訂購完成資料</h2>
+		<p class="subject">非常感謝您的購買，我們會盡快處理您的訂單</p>
+		<p class="desc">親愛的<strong>{{ name }}</strong>(先生/小姐)，訂單已成立</p>
+		<p class="desc"><a href="/cartordercheck/?orderid={{orderid}}&customemail={{email}}">訂單詳細資料</a></p>
+	</div>
 </div>
 
 {% endblock %}

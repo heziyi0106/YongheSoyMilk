@@ -1,5 +1,14 @@
-h2{
+h2,h3{
     text-align: center;
+}
+h3{
+    font-size: 26px;
+    margin-bottom: 20px;
+	color:#E85231;
+    
+}
+.check-wrap{
+	flex-direction: column;
 }
 
 .wrap form{
@@ -36,6 +45,7 @@ h2{
 	padding: 10px 15px;
 	box-sizing: border-box;
 	font-size: 26px;
+	color: #00000077;
 	
 }
 
@@ -68,3 +78,23 @@ h2{
 	text-decoration: none;
 }
 
+.form-group .test{
+	/* position: relative; */
+	display: flex;
+	flex-direction: row;
+	/* width: 100px; */
+	margin: 0;
+	padding: 0;
+}
+.test .test2{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 28px;
+}
+.test .test2 label{
+	margin-right: 10px;
+}
+.test .test2 input{
+	zoom: 150%;
+}
