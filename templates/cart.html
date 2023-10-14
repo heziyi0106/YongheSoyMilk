@@ -26,7 +26,7 @@
 
 	
 	<div class="wrap">
-		<form action="/addtocart/update" method="post" name="form1" id="form1">
+		<form action="/addtocart/update/" method="post" name="form1" id="form1">
 			{% csrf_token %}
 
 			<table>
@@ -52,10 +52,10 @@
                 <tr>
                 	<td><a href="/addtocart/delete/{{forloop.counter0}}" class="delcart" onclick="confirmLink('確定要刪除此商品嗎？'); return document.returnValue">刪除</a></td>
                 	<td>{{ unit.0 }}</td> <!--商品名稱-->
-                	<td>${{ unit.1 }}</td> <!--商品價格-->
+                	<td>$ {{ unit.1 }}</td> <!--商品價格-->
                 	<td><input type="text" name="qty{{ forloop.counter0 }}" id="qty{{ forloop.cunter0 }}" value="{{ unit.2 }}" size="2" /></td> <!--商品數量-->
 
-                	<td><strong>${{ unit.3 }}</strong></td> <!--該商品總價-->
+                	<td><strong>$ {{ unit.3 }}</strong></td> <!--該商品總價-->
                 </tr>
                 {% endfor %}
 
@@ -82,7 +82,7 @@
 			<div class="input-group">
 				<input type="button" name="Continue" value="繼續購物" onClick="window.location='/product'" />
 				<input type="submit" name="Submit" value="更新購物車" />
-				<input type="button" name="Empty" value="清空購物車" onClick="window.location='/addtocart/empty/'" />
+				<input type="button" name="Empty" value="清空購物車" onClick="window.location='/addtocart/empty'" />
 				<input type="button" name="Order" onClick="window.location='/cartorder/'" value="我要結帳" />
 			</div>
             <!-- <table>

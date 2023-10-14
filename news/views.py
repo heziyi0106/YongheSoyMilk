@@ -20,5 +20,5 @@ def index(request):
     data = myNews.objects.all().order_by('-id')[:4] #新聞列表1-4
     return render(request,'index.html',locals())
 
-def notice(request):
-    return render(request,'notice.html')
+def about(request):
+    return render(request,'about.html')

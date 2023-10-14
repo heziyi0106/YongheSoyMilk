@@ -178,6 +178,33 @@ body::-webkit-scrollbar {
 .main-content .index-item txt{
     height: 120px;
 }
+.border{
+    border-bottom: 3px dotted #66694A;
+    padding-bottom: 80px;
+}
+.wrap .about-item{
+    width: 800px;
+    margin: auto;
+}
+.wrap .about-item .txt{
+    text-align: center;
+    line-height: 1.8;
+}
+.wrap .about-item .txt p{
+    margin-bottom: 25px;
+}
+.wrap .about-item .pic{
+    margin-top: 40px;
+    display: flex;
+    width: 100%;
+}
+.wrap .about-item .pic img{
+    width: 400px;
+    vertical-align: middle;
+}
+
+
+
 
 
 

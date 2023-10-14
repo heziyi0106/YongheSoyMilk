@@ -17,44 +17,34 @@
 表單中的屬性加上：enctype="multipart/form-data"
 才可以上傳檔案，不然會fail 
 -->
-
-<form action="" method="post" enctype="multipart/form-data">
-	{% csrf_token %}
-
-	<!-- 崁進 選擇照片 按鈕 -->
-	<div class="form-row">
-		<div class="form-group col-md-4"></div>
-		<div class="form-group col-md-4">
+<div class="wrap">
+	<div class="form">
+	<form action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
 			{{ form.image }} <!-- 網頁上會跳出"選擇檔案"的按鈕 -->
-		</div>
-		<div class="form-group col-md-4"></div>
+			<input type="submit" class="btn btn-primary" value="上傳">		
+	</form>
 	</div>
-
-	<!-- 上傳照片 -->
-	<div class="form-row">
-		<div class="form-group col-md-4"></div>
-		<div class="form-group col-md-4">
-			<input type="submit" class="btn btn-primary" value="上傳">
-		</div>
-		<div class="form-group col-md-4"></div>
-	</div>
-</form>
-
-
-<!-- 用迴圈，把資料庫的內容抓出來秀 -->
-<div class="row">
-	{% for photo in photos %}
-		{% if photo.image %}
-
-			<div class="col-md-4">
-				<div class="imgArea">
-					<img src="{{photo.image.url}}" class="img-top" />
-				</div>
-			</div>
-
-		{% endif %}
-	{% endfor %}
 </div>
 
+<div class="wrap">
+	<!-- 用迴圈，把資料庫的內容抓出來秀 -->
+	<div class="item-group">
+		{% for photo in photos %}
+			{% if photo.image %}
+			<div class="item">
+				<div class="pic">
+					<img src="{{photo.image.url}}" class="img-top" />
+				</div>
+				<div class="txt">
+					<h4>{{photo.image}}</h4>
+					<p>{{photo.upload_date}}</p>
+				</div>
+			</div>
+				
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
 
 {% endblock %}

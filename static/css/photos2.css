@@ -1,0 +1,73 @@
+.wrap form{
+	width: 300px;
+	border: 2px solid transparent;
+	border-radius: 10px;	
+	display: flex;
+	flex-direction: column;	
+	margin: auto;    
+    text-align: center;
+
+}
+.wrap .form{
+
+    border-bottom: 3px dotted #6D7050;
+    width: 90%;
+    padding-bottom: 50px;
+    margin: auto;
+
+
+}
+input+input{
+    margin-bottom: 15px;
+}
+.btn{
+	border: 0;
+	background-color: #04AA6D;
+	color: #fff;
+	border-radius: 5px;
+	width: 100%;
+}
+.wrap .item-group{
+    display: flex;
+    width: 100%;
+    flex-wrap:wrap; /*換行*/
+    justify-content: flex-start; /*水平居中*/ 
+}
+.wrap .item{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.wrap .item .pic{
+    width: 300px;
+    height: 300px;
+    vertical-align: middle;
+    margin: auto;
+    
+}
+.wrap .item .pic img{
+    width: 100%;
+    
+}
+.wrap .item .txt{
+    text-align: center;
+}
+.wrap .item .txt p{
+    font-size: 16px;
+    margin-top: 5px;
+    color: #888;
+}
+
+/*當最後一行是3個元素*/
+.item:last-child:nth-child(4n-1){
+	margin-right: calc(100%/4*1); 
+}
+/*當最後一行是2個元素*/
+.item:last-child:nth-child(4n-2){
+	margin-right: calc(100%/4*2); 
+}
+
+/*當最後一行是1個元素*/
+.item:last-child:nth-child(4n-3){
+	margin-right: calc(100%/4*3); 
+}

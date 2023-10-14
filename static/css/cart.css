@@ -9,6 +9,7 @@ h3{
 .wrap form{
 	width:1000px;
     margin: auto;
+    
 
 }
 
@@ -45,12 +46,9 @@ td{
     padding: 10px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
-
-
-/* form table tr:last-child > tr{
-    border: none;
+.table td > a:vidited {
+	color: rgb(0,0,238);
 }
-form table tr:last-child > td input{
-    font-size: 20px;
-    border: none;
-} */
+.table td > a:hover{
+	color:#E85231;
+}

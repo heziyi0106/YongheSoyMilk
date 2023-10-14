@@ -11,4 +11,5 @@ class Photo(models.Model):
     # blank, null 這兩個表示圖片欄位是否可以是空值，預設False
     # 若要空值，blank=True, null=True
     image = models.ImageField(upload_to='images/',blank=False,null=False)
+    
     upload_date = models.DateField(default=timezone.now) #抓下圖片的時間

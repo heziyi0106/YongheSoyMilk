@@ -6,7 +6,7 @@ from .forms import UploadModelForm
 from .models import Photo
 
 def uploadFile(request):
-    photos = Photo.objects.all()    #抓取全部的資料
+    photos = Photo.objects.all().order_by('-id')    #抓取全部的資料
     form = UploadModelForm()        #建立上傳圖片表單物件
     
     if request.method == 'POST':    #確定上傳是否為POST

@@ -24,6 +24,8 @@
 	margin-left: 0;
 	padding: 0 20px;
 	border-radius: 50px;
+	border: 1px solid rgba(0, 0, 0, .3);
+	color: #444;
 }
 .wrap form .group{
 	display: flex;
@@ -37,6 +39,7 @@
 	margin-bottom: 40px;
 	padding: 10px;
 	text-align: center;
+	justify-content: flex-start;
 }
 .item .txt{
 	line-height: 1.8;
@@ -68,6 +71,12 @@
 }
 .page a{
 	text-decoration: none;	
+}
+.txt a:visited, .page a:visited{
+	color: rgb(0,0,238);
+}
+.txt a:hover, .page a:hover{
+	color:#E85231;
 }
 
 
