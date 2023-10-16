@@ -16,7 +16,10 @@ file = os.path.join(basedir,'ecpay_payment_sdk.py')
 
 #第一步
 import importlib.util
-spec = importlib.util.spec_from_file_location('ecpay_payment_sdk',file) #第三步--改成自己的路徑
+spec = importlib.util.spec_from_file_location(
+    'ecpay_payment_sdk',
+    file
+) #第三步--改成自己的路徑
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 from datetime import datetime

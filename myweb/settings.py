@@ -26,7 +26,8 @@ SECRET_KEY = "django-insecure-9@_1o6lvrv%y+q&v)zvstqny$3%pif22tcj---7g_q8zr=bl=1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']   # '*'，允許所有主機IP 都可以連入本網頁
+#['192.168.1.100','203.110.1.99'] 表示只允許這兩個IP 進入
 
 
 # Application definition
@@ -87,10 +88,10 @@ pymysql.install_as_MySQLdb()
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": 'yongheSoyMilk',    #資料庫名稱
-        'USER': 'yhgood',           #由一個非最高權限的帳號去登入(非root)
-        'PASSWORD': '987654321',
-        'HOST': 'Localhost',
+        "NAME": 's105062440$tndjango',    #資料庫名稱
+        'USER': 's105062440',           #由一個非最高權限的帳號去登入(非root)
+        'PASSWORD': 'sql>>00326**',
+        'HOST': 's105062440.mysql.pythonanywhere-services.com',
         'PORT': '3306',
     }
 }

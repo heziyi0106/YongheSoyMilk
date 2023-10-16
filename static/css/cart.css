@@ -60,6 +60,11 @@ table{
     border: 3px solid #666;
     box-sizing: border-box;
 }
+table > caption{
+    text-align: left;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
 
 th{
     border: 1px solid #666;
@@ -117,4 +122,8 @@ td{
 .uni input{
     text-align: center;
     
+}
+
+.table2{
+    margin-top: 40px;
 }

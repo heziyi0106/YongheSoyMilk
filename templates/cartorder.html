@@ -6,19 +6,23 @@
 
 {% block css %}
  <link rel='stylesheet' href='/static/css/cart.css' />
+ <style>
+
+ </style>
 {% endblock %}
 
 
 {% block Context %}
 
-<div class="wrap">
+<h2>確認訂單</h2>
+<div class="wrap check-wrap">
 
-
+    
     <!-- 結帳資訊表單:有三個table(購物資料、買家資料、購物車動作按鈕) -->
     <form action="/cartok/" method="post" name="form1" id="form1">
         {% csrf_token %}
 
-        <table>
+        <table class="table1">
         
             <tr>
                 <th>商品名稱</th>
@@ -63,9 +67,9 @@
 
         <hr />
 
-        <p class="subject">訂購者資料</p>
-        <table>
-
+        
+        <table class="table2">
+            <caption>訂購者資料</caption>
             <tr>
                 <th>資訊</th>
                 <th>內容</th>
